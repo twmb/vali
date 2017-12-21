@@ -63,7 +63,7 @@ type ifaceWords struct {
 // to allocate a new object, something that this code cannot do.
 func Interface(v reflect.Value) interface{} {
 	// If the value pointer is an interface, we can return that directly.
-	ptr := unsafe.Pointer(uintptr(unsafe.Pointer(&v)) + ptrOffset)
+	ptr := *(*unsafe.Pointer)(unsafe.Pointer(uintptr(unsafe.Pointer(&v)) + ptrOffset))
 	if v.Kind() == reflect.Interface {
 		return *(*interface{})(ptr)
 	}
