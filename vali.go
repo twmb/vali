@@ -1,11 +1,11 @@
-// Package valiface provides a function to obtain an interface{} from a
+// Package vali provides a function to obtain an interface{} from a
 // reflect.Value without panicking, even if the value was obtained by accessing
 // unexported fields.
 //
 // This package relies on Go internal struct layouts and flags, but the parts
 // this relies on have not changed at least two years. As with all code of this
 // kind, exercise caution before using it in production.
-package valiface
+package vali
 
 import (
 	"reflect"
